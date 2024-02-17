@@ -1,0 +1,16 @@
+.link {
+  min-width: 100px;
+  padding: 5px;
+  border-radius: 20px;
+  text-align: center;
+  color: var(--text50);
+}
+
+.link:hover {
+  color: var(--text);
+}
+
+.active {
+  background-color: var(--secondary);
+  color: var(--text);
+}

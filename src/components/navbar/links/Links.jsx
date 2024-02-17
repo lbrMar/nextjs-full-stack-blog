@@ -1,9 +1,9 @@
-import Link from "next/link"
+import styles from './links.module.css'
+import NavLink from '@/components/navbar/links/navlink/NavLink'
 
-export default function Links() {
   const links = [
     {
-      title: "HomePage",
+      title: "Home",
       path: "/"
     },
     {
@@ -20,11 +20,29 @@ export default function Links() {
     },
   ]
 
+export default function Links() {
+
+  // TEMPORARY
+  const session = true
+  const isAdmin = true
+
   return (
-    <div>
+    <div className={styles.linksContainer}>
       {links.map((link) => (
-        <Link key={link.title} href={link.path}>{link.title}</Link>
+        <NavLink item={link} key={link.title} />
       ))}
+      {session ? (
+        isAdmin && (
+          <>
+            <NavLink item={{title: "Admin", path: "/admin"}} />
+            <button className={`btn-primary raised-primary`}>
+              Log Out
+            </button> 
+          </>
+        )
+      ) : (
+        <NavLink item={{title: "Login", path: "/login"}} />
+      )}
     </div>
   )
 }

@@ -1,0 +1,50 @@
+  /* add raised effect to containers */
+.raised-primary {
+  box-shadow: inset 0px 1px 0px var(--primary-raised), 0px 1px 3px hsla(0, 0%, 0%, 0.2);
+}
+
+.raised-secondary {
+  box-shadow: inset 0px 1px 0px var(--secondary-raised), 0px 1px 3px hsla(0, 0%, 0%, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  .raised-primary {
+    box-shadow: inset 0px 1px 0px var(--primary-raised), 0px 1px 3px hsla(0, 0%, 50%, 0.2);
+  }
+
+  .raised-secondary {
+    box-shadow: inset 0px 1px 0px var(--secondary-raised), 0px 1px 3px hsla(0, 0%, 50%, 0.2);
+  }
+}
+
+  /* add inset effect to containers */
+.inset {
+  box-shadow: 0px 2px 0px hsla(0, 0%, 100%, 0.15), inset 0px 2px 2px hsla(0, 0%, 0%, 0.1);
+}
+
+  /* floating effect with shadow */
+.floating-sm {
+  box-shadow: 0px 1px 3px hsla(0, 0%, 0%, 0.2);
+}
+
+.floating-md {
+  box-shadow: 0px 4px 6px hsla(0, 0%, 0%, 0.2);
+}
+
+.floating-lg {
+  box-shadow: 0px 8px 12px hsla(0, 0%, 0%, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  .floating-sm {
+    box-shadow: 0px 1px 3px hsla(0, 0%, 50%, 0.2);
+  }
+
+  .floating-md {
+    box-shadow: 0px 4px 6px hsla(0, 0%, 50%, 0.2);
+  }
+
+  .floating-lg {
+    box-shadow: 0px 8px 12px hsla(0, 0%, 50%, 0.2);
+  }
+}

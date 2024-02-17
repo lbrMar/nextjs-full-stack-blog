@@ -35,7 +35,7 @@ export default function Links() {
         isAdmin && (
           <>
             <NavLink item={{title: "Admin", path: "/admin"}} />
-            <button className={`btn-primary raised-primary`}>
+            <button className={`btn-primary`}>
               Log Out
             </button> 
           </>

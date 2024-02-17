@@ -10,7 +10,7 @@
   --text05: hsla(231, 87%, 6%, 0.05);
   --bg: hsl(233, 80%, 98%);
   --primary: hsl(230, 85%, 29%);
-  --primary-raised: hsl(230, 85%, 35%)
+  --primary-raised: hsl(230, 85%, 35%);
   --primary20: hsla(230, 85%, 29%, 0.2);
   --secondary: hsl(345, 85%, 68%);
   --secondary30: hsla(345, 85%, 68%, 0.3);
@@ -72,7 +72,7 @@ body {
 }
 
 body {
-  background-color: var(--bg);
+  background: var(--bg);
   color: var(--text);
 }
 
@@ -82,12 +82,10 @@ a {
 }
 
 .container {
-  background-color: var(--bg);
-  width: 90vw;
-  margin: auto;
-  padding-left: 50px;
-  padding-right: 50px;
+  /* background-color: var(--bg); */
+  width: 100vw;
   min-height: 100vh;
+  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

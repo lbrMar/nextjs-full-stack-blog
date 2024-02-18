@@ -1,26 +1,7 @@
 import styles from './links.module.css'
 import NavLink from '@/components/navbar/links/navlink/NavLink'
 
-  const links = [
-    {
-      title: "Home",
-      path: "/"
-    },
-    {
-      title: "About",
-      path: "/about"
-    },
-    {
-      title: "Contact",
-      path: "/contact"
-    },
-    {
-      title: "Blog",
-      path: "/blog"
-    },
-  ]
-
-export default function Links() {
+export default function Links({ linkItems }) {
 
   // TEMPORARY
   const session = true
@@ -28,7 +9,7 @@ export default function Links() {
 
   return (
     <div className={styles.linksContainer}>
-      {links.map((link) => (
+      {linkItems.map((link) => (
         <NavLink item={link} key={link.title} />
       ))}
       {session ? (

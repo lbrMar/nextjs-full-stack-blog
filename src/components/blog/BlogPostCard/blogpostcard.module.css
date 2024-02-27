@@ -33,9 +33,10 @@
 }
 
 .textContainer {
+  max-width: 300px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: flex-start;
   gap: 10px;
 }
@@ -46,6 +47,7 @@
 
 .description {
   font-size: 15px;
+  color: var(--text50);
 }
 
 .blogLink {

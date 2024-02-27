@@ -2,7 +2,7 @@ import styles from "./blogpostcard.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function BlogPostCard() {
+export default function BlogPostCard({ post }) {
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
@@ -16,8 +16,8 @@ export default function BlogPostCard() {
         <span className={styles.date}>2024/01/01</span>
       </div>
       <div className={styles.textContainer}>
-        <h2 className={styles.title}>Title</h2>
-        <p className={styles.description}>description</p>
+        <h2 className={styles.title}>{post.title}</h2>
+        <p className={styles.description}>{post.body}</p>
         <Link 
           className={styles.blogLink}
           href="/blog/post"

@@ -5,7 +5,7 @@ export default function About() {
   return (
     <div className={styles.container}>
       <div className={styles.textContainer}>
-        <h2>About Agency</h2>
+        <h2 className={styles.subTitle}>About Agency</h2>
         <h1 className={styles.title}>
           We create digital ideas that are bigger, bolder, braver and better.
         </h1>

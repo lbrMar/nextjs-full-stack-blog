@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 50px;
 }
 
 .textContainer {
@@ -13,6 +14,10 @@
   margin-left: 80px;
 }
 
+.subTitle {
+  color: var(--secondary);
+}
+
 .title {
   font-size: 50px;
   max-width: 400px;
@@ -20,6 +25,7 @@
 
 .paragraph {
   max-width: 550px;
+  font-size: 20px;
 }
 
 .boxes {
@@ -28,6 +34,18 @@
   justify-content: space-between;
   align-items: center;
   gap: 20px;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.box h3 {
+  color: var(--accent);
+  font-size: 30px;
 }
 
 .imageContainer {

@@ -1,6 +1,6 @@
 import styles from "./contact.module.css";
 import Image from "next/image";
-import ContactForm from "@/components/contact/ContactForm";
+import ContactForm from "@/components/contact/contactform/ContactForm";
 
 export default function Contact() {
   return (

@@ -5,19 +5,36 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <div className={styles.textContainer}>
-        <h1>Creative Thoughts Industry</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+        <div className={styles.titleContainer}>
+          <h1 className={styles.title}>Creative</h1>
+          <h1 className={styles.title}>Thoughts</h1>
+          <h1 className={styles.title}>Agency</h1>
+        </div>
+        <p className={styles.paragraph}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
         <div className={styles.btnContainer}>
-          <button>Learn More</button>
-          <button>Contact</button>
+          <button className='btn-primary'>Learn More</button>
+          <button className='btn-secondary'>Contact</button>
         </div>
-        <div className={styles.brands}>
-          <Image src="/brands.png" alt='brand images' fill />
+        <div className={styles.brandsContainer}>
+          <Image 
+            src="/brands.png" 
+            alt='brand images' 
+            width={400}
+            height={40}
+            className={styles.brandImg}
+          />
         </div>
       </div>
-      <div className={styles.imageContainer}>
+      <div className={`${styles.imageContainer} lg-dec`}>
+        <Image 
+          src="/hero.gif" 
+          alt='hero image' 
+          width={500}
+          height={400}
+          className={styles.heroImg} 
+        />
       </div>
     </div>
   );

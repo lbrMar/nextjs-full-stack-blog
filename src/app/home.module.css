@@ -1,9 +1,43 @@
 .container {
    display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.brands {
-  position: relative;
-  width: 300px;
-  height: 40px;
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  margin-left: 80px;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.title {
+  font-size: 80px;
+}
+
+.paragraph {
+  font-size: 20px;
+  max-width: 550px;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.imageContainer {
+  margin-right: 80px;
+}
+
+.heroImg {
+  border-radius: 30px;
 }

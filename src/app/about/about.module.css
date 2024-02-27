@@ -1,5 +1,38 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  margin-left: 80px;
+}
+
+.title {
+  font-size: 50px;
+  max-width: 400px;
+}
+
+.paragraph {
+  max-width: 550px;
+}
+
+.boxes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
 .imageContainer {
   position: relative;
   width: 400px;
   height: 400px;
+  margin-right: 80px;
 }

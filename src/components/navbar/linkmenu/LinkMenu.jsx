@@ -11,6 +11,11 @@ export default function LinkMenu({ linkItems }) {
   const onMenuClick = () => {
     setToggelMenu((prev) => prev === 'closed' ? 'open' : 'closed')
   }
+
+  // TEMPORARY
+  const session = true
+  const isAdmin = true
+
   return (
     <div>
       <HamburgerMenuIcon 
@@ -21,10 +26,32 @@ export default function LinkMenu({ linkItems }) {
         <div className={`${styles.menuContainer}`}>
           <h2>Menu</h2>
           {linkItems.map((link) => (
-            <NavLink item={link} key={link.title} />
+            <NavLink 
+              item={link} 
+              key={link.title} 
+              onClick={onMenuClick}
+            />
           ))}
-        </div>
-      )}
+        {session ? (
+          isAdmin && (
+            <>
+              <NavLink 
+                item={{title: "Admin", path: "/admin"}} 
+                onClick={onMenuClick}
+              />
+              <button 
+                className={`btn-primary`}
+                onClick={onMenuClick}
+              >
+                Log Out
+              </button> 
+            </>
+          )
+        ) : (
+          <NavLink item={{title: "Login", path: "/login"}} />
+        )}
+          </div>
+        )}
     </div>
   )
 }

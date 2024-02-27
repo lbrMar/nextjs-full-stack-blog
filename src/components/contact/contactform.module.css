@@ -1,0 +1,26 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.form input {
+  width: 500px;
+  background-color: var(--primary20);
+  color: var(--text);
+  padding: 15px;
+  border-radius: 5px;
+  border: none;
+}
+
+.form textarea {
+  width: 500px;
+  background-color: var(--primary20);
+  color: var(--text);
+  padding: 20px;
+  border-radius: 5px;
+  border: none;
+}
+

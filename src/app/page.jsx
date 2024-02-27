@@ -1,5 +1,6 @@
 import styles from './home.module.css';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -14,8 +15,12 @@ export default function Home() {
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
         <div className={styles.btnContainer}>
-          <button className='btn-primary'>Learn More</button>
-          <button className='btn-secondary'>Contact</button>
+          <Link href="/about">
+            <button className='btn-primary'>Learn More</button>
+          </Link>
+          <Link href="/contact">
+            <button className='btn-secondary'>Contact</button>
+          </Link>
         </div>
         <div className={styles.brandsContainer}>
           <Image 

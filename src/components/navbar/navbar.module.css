@@ -9,6 +9,12 @@
   /* border-bottom: 1px solid var(--primary); */
 }
 
+@media screen and (max-width: 620px) {
+  .container {
+    padding: 10px 10px;
+  }
+}
+
 .logo {
   font-weight: 900;
 }

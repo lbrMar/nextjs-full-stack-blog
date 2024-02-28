@@ -1,0 +1,12 @@
+.detailContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.detailTitle {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 20px;
+}

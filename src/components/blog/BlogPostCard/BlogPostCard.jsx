@@ -20,7 +20,7 @@ export default function BlogPostCard({ post }) {
         <p className={styles.description}>{post.body}</p>
         <Link 
           className={styles.blogLink}
-          href="/blog/post"
+          href={`/blog/${post.id}`}
         >
           READ MORE
         </Link>

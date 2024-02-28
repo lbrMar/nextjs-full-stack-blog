@@ -1,22 +1,26 @@
 import Error from "../error";
 import styles from "./blog.module.css";
 import BlogPostCard from "@/components/blog/BlogPostCard/BlogPostCard";
+import { getPosts } from "@/lib/data";
 
-const getData = async () => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts")
+// Fetch with an API
+// const getData = async () => {
+//   const res = await fetch("https://jsonplaceholder.typicode.com/posts")
 
-  if (!res.ok) {
-    throw new Error("Something went wrong")
-  }
+//   if (!res.ok) {
+//     throw new Error("Something went wrong")
+//   }
 
-  return res.json()
-}
+//   return res.json()
+// }
 
 export default async function Blog() {
 
-  const posts = await getData()
+  // Fetch without an API
+  const posts = await getPosts()
 
-  console.log(posts)
+  // Fetch with an API
+  // const posts = await getData()
 
   return (
     <div className={styles.container}>

@@ -59,5 +59,5 @@ const blogPostSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export const User = mongoose.model.User || mongoose.model("user", userSchema)
-export const blogPost = mongoose.model.blogPost || mongoose.model("blogPost", blogPostSchema)
+export const User = mongoose.models.User || mongoose.model("User", userSchema)
+export const BlogPost = mongoose.models.BlogPost || mongoose.model("BlogPost", blogPostSchema)

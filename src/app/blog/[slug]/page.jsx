@@ -2,7 +2,7 @@ import styles from "./singlePost.module.css";
 import Image from "next/image";
 import PostUser from "@/components/blog/PostUser/PostUser";
 import { Suspense } from "react";
-import { getPost } from "@/lib/data";
+import { getBlogPost } from "@/lib/data";
 
 // Fetch with an API
 // const getData = async (slug) => {
@@ -20,8 +20,7 @@ export default async function Post({ params }) {
   const {slug} = params
 
   // Fetch without an API
-  const post = await getPost(slug)
-  console.log(post)
+  const blogPost = await getBlogPost(slug)
 
   // Fetch with an API
   // const post = await getData(slug)
@@ -38,7 +37,7 @@ export default async function Post({ params }) {
         />
       </div>
       <div className={styles.textContainer}>
-        <h1 className={styles.title}>{post?.title}</h1>
+        <h1 className={styles.title}>{blogPost?.title}</h1>
         <div className={styles.detail}>
           <Image 
             className={styles.avatar}
@@ -48,9 +47,9 @@ export default async function Post({ params }) {
             height={100}
           />
           <div className={styles.detailContainer}>
-            {post && (
+            {blogPost && (
               <Suspense fallback={<div>...loading</div>}>
-                <PostUser userId={post.userId}/>
+                <PostUser userId={blogPost.userId}/>
               </Suspense>
             )}
             <div className={styles.detailContent}>
@@ -60,7 +59,7 @@ export default async function Post({ params }) {
           </div>
         </div>
         <div className={styles.content}>
-          {post?.body}
+          {blogPost?.desc}
         </div>
       </div>
     </div>

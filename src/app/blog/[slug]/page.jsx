@@ -28,13 +28,15 @@ export default async function Post({ params }) {
   return (
     <div className={styles.container}>
       <div className={`{styles.imgContainer} md-dec`}>
-        <Image 
-        src="/blogImgTwo.jpg" 
-        alt="blog image"
-        width={200}
-        height={400}
-          className={styles.image}
+        {blogPost.image && (
+          <Image 
+          src={blogPost.image}
+          alt="blog image"
+          width={200}
+          height={400}
+            className={styles.image}
         />
+      )}
       </div>
       <div className={styles.textContainer}>
         <h1 className={styles.title}>{blogPost?.title}</h1>

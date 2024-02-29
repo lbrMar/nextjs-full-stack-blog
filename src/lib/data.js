@@ -42,7 +42,7 @@ export const getBlogPosts = async () => {
 export const getBlogPost = async (slug) => {
   try {
     connectToDb()
-    const blogPost = await BlogPost.find({ slug: slug })
+    const blogPost = await BlogPost.findOne({ slug: slug })
     return blogPost
   } catch (error) {
     console.log(`Error fetching blog post: ${error}`)
@@ -56,7 +56,7 @@ export const getUsers = async () => {
     const users = await User.find()
     return users
   } catch (error) {
-    console.log(`Error fetching user: ${error}`)
+    console.log(`Error fetching users: ${error}`)
     throw new Error(error)
   }
 }
@@ -67,7 +67,7 @@ export const getUser = async (id) => {
     const user = await User.findById(id)
     return user
   } catch (error) {
-    console.log(`Error fetching users: ${error}`)
+    console.log(`Error fetching user: ${error}`)
     throw new Error(error)
   }
 }

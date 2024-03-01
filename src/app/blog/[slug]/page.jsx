@@ -4,6 +4,11 @@ import PostUser from "@/components/blog/PostUser/PostUser";
 import { Suspense } from "react";
 import { getBlogPost } from "@/lib/data";
 
+export const metadata = {
+  title: "Blog",
+  description: "Blog page",
+};
+
 // Fetch with an API
 // const getData = async (slug) => {
 //   const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${slug}`)

@@ -3,6 +3,11 @@ import styles from "./blog.module.css";
 import BlogPostCard from "@/components/blog/BlogPostCard/BlogPostCard";
 import { getBlogPosts } from "@/lib/data";
 
+export const metadata = {
+  title: "Blog",
+  description: "Blog page",
+};
+
 // Fetch with an API
 // const getData = async () => {
 //   const res = await fetch("https://jsonplaceholder.typicode.com/posts")

@@ -1,5 +1,6 @@
 import { BlogPost, User } from "./models"
 import { connectToDb } from "./utils"
+import { unstable_noStore } from "next/cache"
 
 // Test data for fetch without api
 // const users = [
@@ -51,6 +52,7 @@ export const getBlogPost = async (slug) => {
 }
 
 export const getUsers = async () => {
+  unstable_noStore();
   try {
     connectToDb()
     const users = await User.find()

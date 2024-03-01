@@ -4,9 +4,14 @@ import PostUser from "@/components/blog/PostUser/PostUser";
 import { Suspense } from "react";
 import { getBlogPost } from "@/lib/data";
 
-export const metadata = {
-  title: "Blog",
-  description: "Blog page",
+export const generateMetadata = async ({ params}) => {
+  const { slug } = params;
+  const blogPost = await getBlogPost(slug);
+
+  return {
+    title: blogPost?.title,
+    description: blogPost?.desc,
+  };
 };
 
 // Fetch with an API

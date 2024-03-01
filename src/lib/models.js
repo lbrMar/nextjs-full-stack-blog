@@ -39,7 +39,7 @@ const blogPostSchema = new mongoose.Schema(
       required: true,
       max: 50,
     },
-    desc: {
+    description: {
       type: String,
       required: true,
       max: 200,

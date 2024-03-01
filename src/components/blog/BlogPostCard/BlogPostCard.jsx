@@ -19,7 +19,7 @@ export default function BlogPostCard({ post }) {
       </div>
       <div className={styles.textContainer}>
         <h2 className={styles.title}>{post.title}</h2>
-        <p className={styles.description}>{post.desc}</p>
+        <p className={styles.description}>{post.description}</p>
         <Link 
           className={styles.blogLink}
           href={`/blog/${post.slug}`}

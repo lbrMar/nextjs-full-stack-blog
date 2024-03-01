@@ -1,0 +1,29 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 50px;
+  gap: 20px;
+  padding: 20px;
+}
+
+.lableContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 5px;
+  padding: 5px;
+}
+
+.input {
+  width: 500px;
+  padding: 10px;
+}
+
+@media screen and (max-width: 620px) {
+  .input {
+    width: 250px
+  }
+}

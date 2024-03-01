@@ -10,7 +10,7 @@ export const generateMetadata = async ({ params}) => {
 
   return {
     title: blogPost?.title,
-    description: blogPost?.desc,
+    description: blogPost?.description,
   };
 };
 
@@ -66,7 +66,7 @@ export default async function Post({ params }) {
           </div>
         </div>
         <div className={styles.content}>
-          {blogPost?.desc}
+          {blogPost?.description}
         </div>
       </div>
     </div>

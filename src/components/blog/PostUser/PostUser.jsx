@@ -1,6 +1,7 @@
 // import Error from "next/error";
 import styles from "./PostUser.module.css";
 import { getUser } from "@/lib/data";
+import Image from "next/image";
 
 // Fetch with an API
 // const getData = async (userId) => {
@@ -26,9 +27,18 @@ export default async function PostUser({ userId }) {
   console.log(user)
 
   return (
-    <div className={styles.detailContent}>
-      <span className={styles.detailTitle}>Author</span>
-      <span className={styles.detailValue}>{user.userName}</span>
+    <div className={styles.detailContainer}>
+      <Image 
+        className={styles.avatar}
+        src={user.image || "/noavatar.png"} 
+        alt="avatar image"
+        width={100}
+        height={100}
+      />
+      <div className={styles.detailContent}>
+        <span className={styles.detailTitle}>Author</span>
+        <span className={styles.detailValue}>{user.userName}</span>
+      </div>
     </div>
   )
 }

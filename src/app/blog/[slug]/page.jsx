@@ -41,13 +41,6 @@ export default async function Post({ params }) {
       <div className={styles.textContainer}>
         <h1 className={styles.title}>{blogPost?.title}</h1>
         <div className={styles.detail}>
-          <Image 
-            className={styles.avatar}
-            src="/noavatar.png" 
-            alt="avatar image"
-            width={100}
-            height={100}
-          />
           <div className={styles.detailContainer}>
             {blogPost && (
               <Suspense fallback={<div>...loading</div>}>
@@ -56,7 +49,9 @@ export default async function Post({ params }) {
             )}
             <div className={styles.detailContent}>
               <span className={styles.detailTitle}>Published</span>
-              <span className={styles.detailValue}>2024/01/01</span>
+              <span className={styles.detailValue}>
+                {blogPost.createdAt.toString().slice(4, 16)}
+              </span>
             </div>
           </div>
         </div>

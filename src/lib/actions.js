@@ -2,8 +2,8 @@
 
 import { connectToDb } from "./utils";
 import { BlogPost } from "./models";
-import { toast } from "react-toastify";
 import { revalidatePath } from "next/cache";
+import { signIn, signOut } from "@/lib/auth"
 
 export const addBlogPost = async (formData) => {
   // const title = formData.get("title")
@@ -48,4 +48,14 @@ export const deleteBlogPost = async (formData) => {
   } catch (error) {
     console.log("Error deleting blog post", error)
   }
+}
+
+export const handleGitHubLogin = async () => {
+  "use server"
+  await signIn("github")
+}
+
+export const handleLogOut = async () => {
+  "use server"
+  await signOut()
 }

@@ -2,6 +2,7 @@ import styles from './navbar.module.css'
 import Links from "@/components/navbar/links/Links"
 import LinkMenu from '@/components/navbar/linkmenu/LinkMenu'
 import Link from 'next/link'
+import { auth } from '@/lib/auth'
 
 const links = [
   {
@@ -22,7 +23,10 @@ const links = [
   },
 ]
 
-export default function NavBar() {
+export default async function NavBar() {
+
+  const session = await auth()
+
   return (
     <div className={styles.container}>
       <div className={`${styles.logo} font-gradient`}>
@@ -31,10 +35,10 @@ export default function NavBar() {
         </Link>
       </div>
       <div className='lg-dec'>        
-        <Links linkItems={links} />
+        <Links session={session} linkItems={links} />
       </div>
       <div className='lg-inc'>
-        <LinkMenu linkItems={links} />
+        <LinkMenu session={session} linkItems={links} />
       </div>
     </div>
   )

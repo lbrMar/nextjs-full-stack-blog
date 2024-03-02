@@ -10,7 +10,7 @@ export const metadata = {
 
 // Fetch with an API
 // const getData = async () => {
-//   const res = await fetch("https://jsonplaceholder.typicode.com/posts")
+//   const res = await fetch("https://localhost:3000/api/blog")
 
 //   if (!res.ok) {
 //     throw new Error("Something went wrong")

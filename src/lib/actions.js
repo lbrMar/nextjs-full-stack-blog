@@ -100,6 +100,11 @@ export const registerUser = async (formData) => {
   }
 }
 
+export const login = async (formData) => {
+  "use server"
+
+  console.log("Logging in")
+}
 
 
 

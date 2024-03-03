@@ -4,6 +4,8 @@ import { connectToDb } from "./utils";
 import { BlogPost } from "./models";
 import { revalidatePath } from "next/cache";
 import { signIn, signOut } from "@/lib/auth"
+import { User } from "./models";
+import bcrypt from "bcryptjs"
 
 export const addBlogPost = async (formData) => {
   // const title = formData.get("title")
@@ -59,3 +61,46 @@ export const handleLogOut = async () => {
   "use server"
   await signOut()
 }
+
+export const registerUser = async (formData) => {
+  "use server"
+
+  const { userName, email, password, passwordRepeat, image } = Object.fromEntries(formData)
+
+  if (password !== passwordRepeat) {
+    return "Passwords do not match"
+  }
+
+  try {
+    connectToDb()
+
+    const user = await User.findOne({ userName })
+
+    if (user) {
+      return "User already exists"
+    }
+
+    const salt = await bcrypt.genSalt(10)
+    const hashedPassword = await bcrypt.hash(password, salt)
+    console.log(hashedPassword)
+    
+    const newUser = new User({
+      userName,
+      email,
+      password: hashedPassword,
+      image,
+    })
+
+    await newUser.save()
+
+    console.log("User created", newUser)
+  } catch (error) {
+    console.log("Error creating user", error)
+    return { error: "Error creating user" }
+  }
+}
+
+
+
+
+

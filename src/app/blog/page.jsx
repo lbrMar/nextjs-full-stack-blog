@@ -29,8 +29,6 @@ export default async function Blog() {
   
   // Fetch with Mongo
   const blogPosts = await getBlogPosts()
-  console.log(blogPosts)
-  
 
   return (
     <div className={styles.container}>

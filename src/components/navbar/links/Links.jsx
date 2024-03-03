@@ -8,16 +8,16 @@ export default function Links({ session, linkItems }) {
   // const isAdmin = true
 
   console.log(session)
-  console.log(session?.user.name)
+  console.log(session?.user.email)
 
   return (
     <div className={styles.linksContainer}>
       {linkItems.map((link) => (
         <NavLink item={link} key={link.title} />
       ))}
-      {session?.user.name ? (
+      {session?.user.email ? (
         <>
-          {session.user.name?.isAdmin && (
+          {session.user.email?.isAdmin && (
             <>
               <NavLink item={{title: "Admin", path: "/admin"}} />
             </>

@@ -82,7 +82,7 @@ export const registerUser = async (formData) => {
 
     const salt = await bcrypt.genSalt(10)
     const hashedPassword = await bcrypt.hash(password, salt)
-    console.log(hashedPassword)
+    console.log("Hashed password while registering user", hashedPassword)
     
     const newUser = new User({
       userName,
@@ -100,12 +100,16 @@ export const registerUser = async (formData) => {
   }
 }
 
-export const login = async (formData) => {
+export const credentialsLogin = async (formData) => {
   "use server"
 
-  console.log("Logging in")
+  const { userName, password } = Object.fromEntries(formData)
+  console.log("Credentials login", userName, password)
+
+  try {
+    connectToDb()
+    await signIn("credentials", { userName, password })
+  } catch (error) {
+    console.log("Error in action.js credentials login", error)
+  }
 }
-
-
-
-

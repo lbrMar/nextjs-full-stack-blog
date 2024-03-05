@@ -102,7 +102,7 @@ export const registerUser = async (previousState, formData) => {
   }
 }
 
-export const credentialsLogin = async (formData) => {
+export const credentialsLogin = async (previousState, formData) => {
   "use server"
 
   const { userName, password } = Object.fromEntries(formData)
@@ -111,7 +111,13 @@ export const credentialsLogin = async (formData) => {
   try {
     connectToDb()
     await signIn("credentials", { userName, password })
+    return { success: true }
   } catch (error) {
     console.log("Error in action.js credentials login", error)
+
+    if (error.message.includes("CredentialsSignin")) {
+      return { error: "Invalid username or password" }
+    }
+    throw error
   }
 }

@@ -31,7 +31,7 @@ export default function LinkMenu({ session,linkItems }) {
           ))}
         {session?.user.email ? (
           <>
-            {session.user.email?.isAdmin && (
+            {session.user.isAdmin && (
               <>
                 <NavLink 
                   item={{title: "Admin", path: "/admin"}} 

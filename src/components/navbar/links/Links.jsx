@@ -17,7 +17,7 @@ export default function Links({ session, linkItems }) {
       ))}
       {session?.user.email ? (
         <>
-          {session.user.email?.isAdmin && (
+          {session.user.isAdmin && (
             <>
               <NavLink item={{title: "Admin", path: "/admin"}} />
             </>

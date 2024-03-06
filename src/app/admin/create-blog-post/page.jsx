@@ -3,6 +3,8 @@ import { addBlogPost } from "@/lib/actions";
 
 export default async function createBlogPost() {
 
+  const session = await auth()
+
   return (
     <div>
       <h1>Create Blog Post</h1>

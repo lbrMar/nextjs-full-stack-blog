@@ -30,6 +30,7 @@ export const addBlogPost = async (formData) => {
     await newBlogPost.save()
     console.log("Blog post created", newBlogPost)
     revalidatePath("/blog")
+    revalidatePath("/admin")
   } catch (error) {
     console.log("Error posting blog post", error)
   }
@@ -47,6 +48,7 @@ export const deleteBlogPost = async (formData) => {
 
     console.log("Blog post deleted")
     revalidatePath("/blog")
+    revalidatePath("/admin")
   } catch (error) {
     console.log("Error deleting blog post", error)
   }
@@ -100,6 +102,46 @@ export const registerUser = async (previousState, formData) => {
     console.log("Error creating user", error)
     return { error: "Error creating user" }
   }
+}
+
+export const deleteUser = async (previousState, formData) => {
+  const { id } = Object.fromEntries(formData)
+
+  try {
+    connectToDb()
+
+    await BlogPost.deleteMany({ userId: id })
+    await User.findByIdAndDelete(id)
+
+    console.log("User deleted")
+    revalidatePath("/admin")
+  } catch (error) {
+    console.log("Error deleting user", error)
+  }
+}
+
+export const addUser = async (previousState, formData) => {
+  const { userName, email, image, password, isAdmin } = Object.fromEntries(formData)
+
+  try {
+    connectToDb()
+
+    const newUser = new User({
+      userName,
+      email,
+      image,
+      password,
+      isAdmin
+    })
+
+    await newUser.save()
+    console.log("Blog post created", newUser)
+    revalidatePath("/admin")
+  } catch (error) {
+    console.log("Error adding new user", error)
+  }
+
+  console.log(newUser)
 }
 
 export const credentialsLogin = async (previousState, formData) => {

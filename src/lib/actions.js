@@ -140,9 +140,8 @@ export const addUser = async (previousState, formData) => {
     revalidatePath("/admin")
   } catch (error) {
     console.log("Error adding new user", error)
+    return { error: "Error adding new user" }
   }
-
-  console.log(newUser)
 }
 
 export const credentialsLogin = async (previousState, formData) => {

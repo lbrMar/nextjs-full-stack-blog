@@ -18,25 +18,17 @@ export default async function Admin() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.row}>
-        <div className={styles.column}>
+      <div className={styles.rowContainer}>
           <Suspense fallback={<div>...loading</div>}>
             <AdminBlogPosts />
           </Suspense>
-        </div>
-        <div className={styles.column}>
           <AdminBlogPostsForm userId={session.user.id}/>
-        </div>
       </div>
-      <div className={styles.row}>
-        <div className={styles.column}>
+      <div className={styles.rowContainer}>
           <Suspense fallback={<div>...loading</div>}>
             <AdminUsers />
           </Suspense>
-        </div>
-        <div className={styles.column}>
           <AdminUsersForm />
-        </div>
       </div>
     </div>
   );

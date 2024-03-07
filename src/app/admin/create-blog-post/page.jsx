@@ -1,9 +1,8 @@
 import styles from "./CreateBlogPost.module.css";
 import { addBlogPost } from "@/lib/actions";
+import { auth } from "@/lib/auth";
 
 export default async function createBlogPost() {
-
-  const session = await auth()
 
   return (
     <div>

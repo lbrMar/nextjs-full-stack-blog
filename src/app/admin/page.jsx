@@ -4,13 +4,18 @@ import AdminBlogPostsForm from "@/components/admin/AdminBlogPostsForm/AdminBlogP
 import AdminUsers from "@/components/admin/AdminUsers/AdminUsers";
 import AdminUsersForm from "@/components/admin/AdminUsersForm/AdminUsersForm";
 import { Suspense } from "react";
+import { auth } from "@/lib/auth";
 
 export const metadata = {
   title: "Admin",
   description: "Admin page",
 };
 
-export default function Admin() {
+export default async function Admin() {
+
+  const session = await auth()
+  console.log(session)
+
   return (
     <div className={styles.container}>
       <div className={styles.row}>
@@ -20,7 +25,7 @@ export default function Admin() {
           </Suspense>
         </div>
         <div className={styles.column}>
-          <AdminBlogPostsForm />
+          <AdminBlogPostsForm userId={session.user.id}/>
         </div>
       </div>
       <div className={styles.row}>

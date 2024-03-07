@@ -7,7 +7,7 @@ import { signIn, signOut } from "@/lib/auth"
 import { User } from "./models";
 import bcrypt from "bcryptjs"
 
-export const addBlogPost = async (formData) => {
+export const addBlogPost = async (previousState, formData) => {
   // const title = formData.get("title")
   // const description = formData.get("description")
   // const image = formData.get("image")
@@ -33,6 +33,7 @@ export const addBlogPost = async (formData) => {
     revalidatePath("/admin")
   } catch (error) {
     console.log("Error posting blog post", error)
+    return { error: "Error posting blog post" }
   }
 
   console.log(title, description, image, userId, slug)
